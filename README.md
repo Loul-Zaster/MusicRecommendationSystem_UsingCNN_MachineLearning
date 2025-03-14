@@ -46,27 +46,6 @@ The dataset includes:
 - Comparative Analysis: **TF-IDF vs Word2Vec vs BERT** for lyrics embedding
 - Image-based Similarity: Improved recommendation accuracy using CNNs
 
-## 🛠 Installation & Setup
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-repo/music-recommendation
-   cd music-recommendation
-   ```
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. Set up environment variables for **Spotify API keys**.
-4. Run the model training script:
-   ```bash
-   python train.py
-   ```
-5. Start the API service:
-   ```bash
-   python app.py
-   ```
-6. Open the frontend and access recommendations!
-
 ## 🎯 Future Improvements
 - Enhance model accuracy with **Transformer-based models**
 - Improve **real-time recommendation speed**
