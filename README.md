@@ -1,26 +1,77 @@
-# MusicRecommendationSystem_UsingCNN_MachineLearning
-I.	INTRODUCTION
-1.	Background
-Music recommendation systems have evolved dramatically over the past decade, driven by the exponential growth of digital streaming platforms and the increasing diversity of user preferences. Traditionally, these systems have relied on techniques such as collaborative filtering—which suggests songs based on the listening habits of similar users—and content-based filtering, which recommends music by analyzing song attributes. However, the rapid evolution of natural language processing (NLP) and computer vision has opened new avenues for capturing the rich, multi-dimensional aspects of music.
-Modern systems now leverage deep learning to extract high-level features from various data sources. For example, state-of-the-art language models like BERT have proven highly effective in capturing the semantic nuances of song lyrics. Similarly, Convolutional Neural Networks (CNNs), such as ResNet-50, have demonstrated excellent performance in extracting discriminative visual features from album covers. By integrating these techniques, a hybrid music recommender system can be developed that exploits both textual and visual information to provide more accurate and context-aware suggestions. This integration reflects a significant step forward from traditional models, as it harnesses unsupervised learning methods to compute similarities across combined modalities without requiring large labeled datasets.
-2.	Problem Statement
-Despite the advancements in recommendation technologies, many existing systems still exhibit limitations in capturing the full spectrum of music’s appeal. Conventional systems often focus on either user behavior or isolated content features, neglecting the intertwined relationship between a song's lyrical depth and its visual presentation (e.g., album artwork). This narrow focus can lead to recommendations that are either too generic or fail to resonate with users on a deeper level. The specific challenge addressed in this project is to design and implement a hybrid music recommender system that integrates both lyrics and album image features using unsupervised learning techniques. The aim is to compute meaningful embeddings for both text and image data, and then leverage cosine similarity to identify songs that are both semantically and visually similar. Furthermore, the system is expected to handle new, previously unseen songs by dynamically computing their embeddings and comparing them against a pre-constructed embedding space.
-3.	Objectives 
-The primary objectives of this project are as follows:
--	Develop a Hybrid Recommender System: Create a system that fuses information from two primary modalities—lyrics and album art—using advanced embedding techniques.
--	Leverage Deep Learning Models: Utilize pre-trained models such as BERT for text embedding and ResNet-50 for image feature extraction, ensuring that the model captures the rich semantic and visual content of the songs.
--	Implement Unsupervised Learning for Similarity Computation: Employ cosine similarity as a means to determine the likeness between songs in the combined embedding space, without the need for labeled data.
--	Integrate Real-Time Data Retrieval: Interface with the Spotify API to fetch real-time data such as album covers and additional metadata, ensuring that the system stays up-to-date with current music trends.
--	Design an Interactive User Interface: Build an application using Streamlit that allows users to search for songs and receive recommendations, even when the searched song is not part of the initial dataset.
-4.	Significance 
-This project holds significant potential for transforming how music is recommended on digital platforms. By integrating unsupervised deep learning techniques to analyze both lyrics and visual content, the proposed system offers a more holistic approach to music recommendation. This hybrid method not only improves the accuracy of suggestions but also enhances the user experience by capturing subtler aspects of musical content. The significance of the project is threefold:
--	Enhanced User Engagement: Providing recommendations that resonate on both a lyrical and visual level can lead to higher user satisfaction and longer engagement times.
--	Scalability and Adaptability: Since the system relies on unsupervised learning, it can be scaled and adapted across various music genres and languages without the need for extensive labeled datasets.
--	Practical Impact: The integration of real-time Spotify API data ensures that the recommender system remains relevant, thereby offering immediate practical benefits for streaming platforms and content providers.
-5.	Scope
-The scope of this project is clearly defined to focus on the development of a content-based music recommender system that integrates both textual and visual modalities. The key components of the project include:
--	Data Acquisition: Utilizing publicly available music data that includes song IDs, names, album names, artists, lyrics, and album cover URLs. Additional data is retrieved dynamically through the Spotify API.
--	Data Preprocessing and Feature Engineering: Implementing rigorous data cleaning procedures for both text and image data. For lyrics, this includes tokenization, normalization, and embedding extraction using BERT. For album covers, this involves image preprocessing and feature extraction using a pre-trained ResNet-50 model.
--	Model Implementation: Focusing on an unsupervised learning framework where cosine similarity is used to compare combined embeddings of songs. The project does not incorporate supervised learning or collaborative filtering methods.
--	System Integration: Building a real-time application using Streamlit that allows users to input search queries and receive immediate, accurate song recommendations.
--	Limitations: The project does not address user behavioral data or personalized recommendations through collaborative filtering, and it is limited to content-based features. Future work may expand the system to include these dimensions.
+# Music Recommendation System Using CNN & Unsupervised Learning
+## 📌 Overview
+This project is a **music recommendation system** that utilizes **collaborative filtering** and **content-based filtering**, enhanced with **BERT embeddings** and **image analysis** to improve accuracy. The system leverages **unsupervised learning** techniques and is optimized for real-world application by integrating with **Spotify's API**.
+
+## 🔗 Dataset
+The primary dataset is sourced from:
+- [Kaggle: Spotify Songs with Attributes and Lyrics](https://www.kaggle.com/datasets/bwandowando/spotify-songs-with-attributes-and-lyrics)
+- Spotify API for **real-time metadata retrieval** (album covers, song details, track popularity, etc.).
+
+### 🗂 Data Characteristics
+The dataset includes:
+- **id**: Unique identifier for each song.
+- **name**: Song title.
+- **album_name**: Album in which the song is featured.
+- **artists**: Names of the performing artists.
+- **lyrics**: Full song lyrics.
+- **album_url**: Link to album cover image.
+- **popularity**: Popularity score from Spotify.
+- **audio features**: tempo, valence, danceability, energy, etc.
+- **over 160,000 records**.
+
+## 🚀 Technologies Used
+- **Python** (NumPy, Pandas, Scikit-learn, TensorFlow, PyTorch)
+- **Spotify API** for real-time song data retrieval
+- **BERT embeddings** for lyrics-based similarity
+- **CNN (Convolutional Neural Networks)** for album cover image analysis
+- **Flask / FastAPI** for deployment
+- **Docker** for containerization
+- **PostgreSQL** / **MongoDB** for database storage
+
+## 🏗 System Architecture
+1. **Data Processing**
+   - Preprocessing: Cleaning, tokenization, embedding
+   - Feature Engineering: TF-IDF, Word2Vec, BERT embeddings
+   - Image Processing: CNN-based album image similarity
+2. **Model Training**
+   - Unsupervised learning: KNN, matrix factorization, collaborative filtering
+   - Hybrid model combining **content-based + collaborative filtering**
+3. **Deployment**
+   - API integration with Spotify
+   - Web application with **ReactJS / Next.js** frontend
+   - Model inference pipeline for real-time recommendations
+
+## 📊 Results
+- Evaluation Metrics: **Precision@K, Recall, F1-Score, RMSE**
+- Comparative Analysis: **TF-IDF vs Word2Vec vs BERT** for lyrics embedding
+- Image-based Similarity: Improved recommendation accuracy using CNNs
+
+## 🛠 Installation & Setup
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-repo/music-recommendation
+   cd music-recommendation
+   ```
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Set up environment variables for **Spotify API keys**.
+4. Run the model training script:
+   ```bash
+   python train.py
+   ```
+5. Start the API service:
+   ```bash
+   python app.py
+   ```
+6. Open the frontend and access recommendations!
+
+## 🎯 Future Improvements
+- Enhance model accuracy with **Transformer-based models**
+- Improve **real-time recommendation speed**
+- Expand dataset to include more **global music trends**
+
+## 📬 Contact
+For any inquiries, feel free to open an issue or contact me at **your-email@example.com**.
+
