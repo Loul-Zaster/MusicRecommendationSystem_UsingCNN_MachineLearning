@@ -52,5 +52,5 @@ The dataset includes:
 - Expand dataset to include more **global music trends**
 
 ## 📬 Contact
-For any inquiries, feel free to open an issue or contact me at **your-email@example.com**.
+For any inquiries, feel free to open an issue or contact me at **loulzasterr@gmail.com**.
 
